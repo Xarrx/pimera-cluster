@@ -5,7 +5,7 @@
 import serial, time
 
 ser = serial.Serial('/dev/ttyACM0')
-ser.write(b'B#000000-0050#0000FF-0050\n')
+ser.write(b'B#000000-0050#FFFF00-0050\n')
 ser.flush()
 time.sleep(.3)
 
