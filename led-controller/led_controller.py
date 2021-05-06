@@ -46,7 +46,7 @@ Options:
 		if opt == '-h' or opt == '--help':
 			usage()
 		
-		elif opt == '-a' or opt == 'attn':
+		elif opt == '-a' or opt == '--attn':
 			set_led(b'B#000000-0050#FFFF00-0050\n')
 			
 		elif opt == '-b' or opt == '--blink':
