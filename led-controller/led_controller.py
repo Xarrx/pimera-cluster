@@ -15,7 +15,8 @@ def set_led(bin):
 	sleep(.3)
 	
 	# close the serial device
-
+	ser.close()
+	
 def main(argv):
 	import getopt
 	version = 'v0.2.20210506'
