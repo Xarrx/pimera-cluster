@@ -3,11 +3,12 @@ Description=Run initialization for using fitStatUSB device.
 After=network.target
 
 [Service]
-ExecStart=/bin/sh -e fitStatUSB-setup.client.sh
-WorkingDirectory=/home/pi/pimera-cluster/fitStatUSB-scripts
+Type=simple
+ExecStart=/bin/bash fsusb.sh
+WorkingDirectory=/home/pi/pimera-cluster/services/fsusb
 StandardOutput=inherit
 StandardError=inherit
-Restart=always
+Restart=no
 User=pi
 
 [Install]
