@@ -7,9 +7,13 @@
 import sys
 
 def get_serial_device():
-	f = open('../services/fsusb/tty_device', 'r')
-	ret = f.readline()
-	f.close()	
+	ret = None
+	#f = open('/tmp/tty_device', 'r')
+	#ret = f.readline()
+	#f.close()
+	with open('/tmp/tty_device', 'r') as f:
+		ret = f.readline()
+
 	return ret
 
 def set_led(bin):

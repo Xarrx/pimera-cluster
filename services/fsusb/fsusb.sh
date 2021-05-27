@@ -30,7 +30,7 @@ fi
 
 stty -F /dev/$serial_device 9600 raw -echo -echoe -echok -echoctl -echoke
 # write the serial device discovered to a file to be used by other scripts.
-printf "/dev/$serial_device" > tty_device
+printf "/dev/$serial_device" > /tmp/tty_device
 echo "Serial device located: /dev/$serial_device"
 #echo "B#002000-0200#004000-0200" > $serial_device
 #echo "F1000" > $serial_device
