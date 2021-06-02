@@ -1,0 +1,17 @@
+[Unit]
+Description=Service to monitor system temps, processes, etc. and blinks LED.
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/pimera-cluster/.venv/bin/python node_monitor.py
+WorkingDirectory=/home/pi/pimera-cluster/services/node_monitor
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure
+SysLogIdentifier=node_mon
+RestartSec=5
+TimeoutStartSec=infinity
+
+[Install]
+WantedBy=multi-user.target
