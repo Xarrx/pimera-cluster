@@ -14,7 +14,7 @@ led_q = LEDStateQueue()
 
 qlock = Lock()
 
-pp = pprint.PrettyPrinter(indent=4)
+#pp = pprint.PrettyPrinter(indent=4)
 
 '''
  Callback to handle when the state changes
