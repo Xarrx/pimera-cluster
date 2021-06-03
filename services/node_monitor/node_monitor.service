@@ -9,7 +9,6 @@ WorkingDirectory=/home/pi/pimera-cluster/services/node_monitor
 StandardOutput=inherit
 StandardError=inherit
 Restart=no
-SysLogIdentifier=node_mon
 TimeoutStartSec=infinity
 
 [Install]
