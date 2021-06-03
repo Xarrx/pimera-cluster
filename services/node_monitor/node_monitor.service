@@ -8,8 +8,9 @@ ExecStart=/home/pi/pimera-cluster/.venv/bin/python node_monitor.py
 WorkingDirectory=/home/pi/pimera-cluster/services/node_monitor
 StandardOutput=inherit
 StandardError=inherit
-Restart=no
-TimeoutStartSec=infinity
+Restart=always
+TimeoutStartSec=30
+User=pi
 
 [Install]
 WantedBy=multi-user.target

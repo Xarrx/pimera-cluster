@@ -9,8 +9,8 @@
 
   # install this version
   cp node_monitor.service /etc/systemd/system/.
-  systemctl enable fsusb-start.service
-  systemctl start fsusb-start.service
+  systemctl enable node_monitor.service
+  systemctl start node_monitor.service
 } &> /tmp/node_monitor-install.log
 
 
