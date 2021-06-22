@@ -1,11 +1,27 @@
 #!/usr/bin/python3.7
+#
+# TODO:	Add function to check if the serial device exits.
+#	Add function to locate the correct serial device.
+#	Add option to specify tty serial device.
+#
 import sys
+
+def get_serial_device():
+	ret = None
+	#f = open('/tmp/tty_device', 'r')
+	#ret = f.readline()
+	#f.close()
+	with open('/tmp/tty_device', 'r') as f:
+		ret = f.readline()
+
+	return ret
+
 def set_led(bin):
 	import serial
 	from time import sleep
-	
+
 	# create the serial device
-	ser = serial.Serial('/dev/ttyACM0')
+	ser = serial.Serial(get_serial_device())
 	
 	# write binary to open seial device
 	ser.write(bin)
@@ -22,7 +38,7 @@ def main(argv):
 	version = 'v0.2.20210506'
 	def usage(ret=0):
 		print('''
-Usage: led_controller.py <option>
+Usage: led_controller.py <option> [-D]
 
 Options:
   -h,--help \tPrint this usage info and exit.
@@ -31,6 +47,7 @@ Options:
   -d,--default \tReset the LED state to deafult mode.
   -e,--error \tSet the LED state to error mode.
   -v,--version \tPrint the version number and exit.
+  -D,--device \tSpecify tty device to use.
 ''')
 		sys.exit(ret)
 	
