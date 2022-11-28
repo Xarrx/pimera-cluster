@@ -4,14 +4,14 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/home/pi/pimera-cluster/.venv/bin/python node_monitor.py
+ExecStart=/home/pi/venvs/node-monitor/venv/bin/python node-monitor.py
 Environment=PYTHONUNBUFFERED=1
-WorkingDirectory=/home/pi/pimera-cluster/services/node_monitor
+WorkingDirectory=/home/pi/pimera-cluster/services/node-monitor
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
 TimeoutStartSec=infinity
-SyslogIdentifier=node_monitor
+SyslogIdentifier=node-monitor
 
 [Install]
 WantedBy=multi-user.target

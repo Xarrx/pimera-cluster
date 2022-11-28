@@ -1,4 +1,4 @@
-#!/usr/bin/python3.7
+#!/usr/bin/python
 #
 # TODO:	Add function to check if the serial device exits.
 #	Add function to locate the correct serial device.

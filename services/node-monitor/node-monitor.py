@@ -1,5 +1,3 @@
-#!/usr/bin/python3.7
-
 from gpiozero import CPUTemperature
 from signal import pause
 from src.fsusbutil import LEDStateQueue, FSUSBDevice, get_serial_device
@@ -19,7 +17,7 @@ qlock = Lock()
 '''
  Callback to handle when the state changes
 '''
-def activated_callback(device):
+def cpu_temp_activated_callback(device):
 	with qlock:
 		#print(led_q.entry_tracker)
 		if device.is_active:
@@ -62,8 +60,8 @@ def main(argv):
 	)
 	
 	# set the callbacks
-	cpu.when_activated = activated_callback
-	cpu.when_deactivated = activated_callback
+	cpu.when_activated = cpu_temp_activated_callback
+	cpu.when_deactivated = cpu_temp_activated_callback
 
 	# wait for events to happen
 	pause()
